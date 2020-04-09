@@ -1,5 +1,4 @@
 // [abhishekvtangod]
-// g++ -Wall -Wextra -Wshadow filename.cpp
 #include<bits/stdc++.h>
 using namespace std; 
 
@@ -7,6 +6,8 @@ using namespace std;
 #define gcd(a,b) __gcd(a,b)
 #define lcm(a,b) (a*b)/gcd(a,b)
 #define bits(x) __builtin_popcountll(x)
+
+
 
 typedef long long int ll;
 ll *A;
@@ -88,6 +89,8 @@ int main()
     cout<<"Range Query:\nEnter (l,r):\n";
     ll l,r;cin>>l>>r;
     cout<<sum(1,l,r,0,n-1)<<'\n';
+
+	if
 
     return 0;
 }
