@@ -1,6 +1,6 @@
 /**
  *    author:  abhishekvtangod
- *    created:        
+ *    created: 27.04.2020 10:00:55 IST       
 **/
 
 #include<bits/stdc++.h>
@@ -37,7 +37,39 @@ template<class T> using oset=tree<T, null_type, less<T>, rb_tree_tag, tree_order
 
 void solve()
 {
+	ll n,x;cin>>n;
+	vector<ll> v;
+	for(ll i=0;i<n;i++)
+	{
+		cin>>x;
+		v.push_back(x);
+	}
+	ll best=v[0],sum=v[0];
 	
+	for(ll i=1;i<n;i++)
+	{
+		sum = max(v[i],sum+v[i]);
+		best = max(best,sum);
+	}
+	sum=0;
+	ll cnt=0;
+	
+	unordered_map<ll,ll> prevSum;
+	ll cursum=0;
+	for(ll i=0;i<n;i++)
+	{
+		cursum+=v[i];
+		
+		if(cursum == best)
+			cnt++;
+		
+		cnt+=prevSum[cursum-best];
+		
+		prevSum[cursum]++;
+	}
+	
+	
+	cout<<best<<" "<<cnt<<endl;
 }
 
 
