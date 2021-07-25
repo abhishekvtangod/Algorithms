@@ -38,6 +38,8 @@ string fl = "Cycle Detected!!!";
 //1 = processing
 //2 = processed
 
+// that exit time of any vertex v is always greater than exit time of any vertex reachable from it 
+// (since they were visited either before the call dfs(v) or during it)
 
 void dfs(int s){
 	state[s] = 1;
